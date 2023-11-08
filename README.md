@@ -1,3 +1,26 @@
+# LLVC Fork
+
+This is a fork of the original LLVC repository. The original repository can be found at https://github.com/KoeAI/LLVC
+
+# データセット作成
+
+
+```bash
+python -m minimal_rvc._infer_folder \
+                                    --train_set_path "experiments/my_run/LibriSpeech/train-clean-360" \
+                                    --dev_set_path "experiments/my_run/LibriSpeech/dev-clean" \
+                                    --out_path "f_8312_ls360" \
+                                    --flatten \
+                                    --model_path "llvc_models/models/rvc/f_8312_32k-325.pth" \
+                                    --model_name "f_8312" \
+                                    --target_sr 16000 \
+                                    --f0_method "rmvpe" \
+                                    --val_percent 0.02 \
+                                    --random_seed 42 \
+                                    --f0_up_key 12
+```
+
+
 # LLVC: **L**ow-Latency **L**ow-Resource **V**oice **C**onversion
 This repository contains the code necessary to train Koe AI's LLVC models and to reproduce the LLVC paper.
 
